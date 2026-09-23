@@ -1,0 +1,17 @@
+class Solution:
+    def halvesAreAlike(self, s: str) -> bool:
+        vowels = "aeiouAEIOU"
+        mid = len(s) // 2
+
+        first = 0
+        second = 0
+
+        for i in range(mid):
+            if s[i] in vowels:
+                first += 1
+
+        for i in range(mid, len(s)):
+            if s[i] in vowels:
+                second += 1
+
+        return first == second
